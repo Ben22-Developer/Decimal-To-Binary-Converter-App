@@ -7,7 +7,7 @@ const decToBin = (() => {
         let binaryNbr = toConvertToBinFn (parseInt(decNbr));
         binaryNbr = parseInt(binaryNbr.join(''));
         return binaryNbr;
-    }
+    } 
 
     //function to do the conversion
     function toConvertToBinFn (toBin) {
@@ -33,7 +33,6 @@ const decToBin = (() => {
 
 //function to deal with events and DOM
 const DOMFn = (() => {
-    document.getElementById('submitButton').value = `Convert \n (ctrl + Enter)`;
     const passInputNbrFn = e => {
         e.preventDefault();
         if (!document.getElementById('inputtedNbr').value) {
@@ -55,9 +54,4 @@ const DOMFn = (() => {
 
 //global event listener
 document.getElementById('submitButton').addEventListener('click',DOMFn.passInputNbrFn);
-document.addEventListener('keydown',e => {
-    if (e.ctrlKey && e.key === 'Enter') {
-        DOMFn.passInputNbrFn(e);
-    }
-});
 
