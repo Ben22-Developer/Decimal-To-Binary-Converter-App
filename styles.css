@@ -1,0 +1,132 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    line-height: 3rem;
+}
+
+:root {
+    --light-blue:rgb(174, 191, 206);
+    --dark-blue:rgb(35, 40, 48);
+    --normal-color:rgba(255, 255, 255, 0.909);
+}
+
+body {
+    background-color: var(--light-blue);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;   
+}
+
+main {
+    height: 100%;
+    width:70%;
+    overflow: auto;
+    padding: 1rem 0 .5rem 0;
+    text-align: center;   
+    background-color: var(--dark-blue);
+    color:var(--normal-color);
+    display: grid;
+    grid-template-columns: 100%;
+    gap:3rem;
+}
+
+.title {
+    padding:2rem;
+    font-weight: bold;
+    font-size: 2rem;
+    color:var(--dark-blue);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    transition: bgColor 1000ms infinite alternate;
+}
+
+fieldset {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+form {
+    padding:0 2rem;
+    legend {
+        font-size: 1.3rem;
+    }
+    fieldset {
+        border: none;
+        input[type="number"] {
+            text-align: center;
+            font-size: 1.5rem;
+        }
+        input[type="number"]::-webkit-outer-spin-button,
+        input[type="number"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
+        input[type="submit"] {
+            line-height: 1.8rem !important;
+            width:50%;
+            position: relative;
+            left:50%;
+            transform: translateX(-50%);
+            padding:0;            
+            font-size: 1rem;
+            border: none;
+            background-color: var(--light-blue);
+        }
+        input[type="submit"]:hover {
+            cursor: pointer;
+            background-color: var(--dark-blue);
+            color: var(--normal-color);
+            border: 1px solid var(--normal-color);
+        }
+        input[type="submit"]:active {
+            cursor: pointer;
+            background-color: var(--light-blue);
+            color:var(--dark-blue);
+            border:none;
+        }
+    }
+}
+
+table {
+    margin: 0 2rem;
+}
+
+table,td,th {
+    border: 2px dashed;
+    border-collapse: collapse;
+}
+td {
+    height: 4rem;
+}
+
+
+footer {
+    align-self: flex-end;
+    border-top:2px solid var(--light-blue);
+    font-weight: bold;
+    word-spacing: .5rem;
+    letter-spacing: .05rem;
+}
+
+
+
+@media (width < 768px) {
+    main {
+        width: 100%;
+    }
+    .title {
+        display: none;
+    }
+}
+@media (width < 375px) {
+    html {
+        font-size: 14px;
+    }
+    input[type="number"] {
+        width: 100%;
+    }
+}
