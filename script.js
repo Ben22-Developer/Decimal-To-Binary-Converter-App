@@ -27,10 +27,6 @@ const decToBin = (() => {
 })()
 
 
-
-
-
-
 //function to deal with events and DOM
 const DOMFn = (() => {
     const passInputNbrFn = e => {
@@ -49,7 +45,6 @@ const DOMFn = (() => {
 
     return {passInputNbrFn} 
 })()
-
 
 
 //global event listener
