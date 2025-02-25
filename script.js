@@ -4,6 +4,9 @@ const decToBin = (() => {
     
     //function to get and to return the result
     function getNbrToConvertFn (decNbr) {
+        if(decNbr < 0) {
+            return "Please enter a positive number";
+        }
         let binaryNbr = toConvertToBinFn (parseInt(decNbr));
         if (binaryNbr.length < 3) {
             binaryNbr = parseInt(binaryNbr.join('')); 
@@ -18,7 +21,7 @@ const decToBin = (() => {
     function toConvertToBinFn (toBin) {
         let binaryResult = [];
         const quotient = parseInt(Math.floor(toBin/2));
-        if (quotient !== 1 && quotient !== 0) {
+        if (quotient >= 2) {
             let result = toConvertToBinFn(quotient);
             result = result.concat(toBin%2);
             return result;
