@@ -5,7 +5,12 @@ const decToBin = (() => {
     //function to get and to return the result
     function getNbrToConvertFn (decNbr) {
         let binaryNbr = toConvertToBinFn (parseInt(decNbr));
-        binaryNbr = parseInt(binaryNbr.join(''));
+        if (binaryNbr.length < 3) {
+            binaryNbr = parseInt(binaryNbr.join('')); 
+        }
+        else {
+            binaryNbr = binaryNbr.join('');
+        }
         return binaryNbr;
     } 
 
@@ -19,7 +24,7 @@ const decToBin = (() => {
             return result;
         }
         else {
-            binaryResult.push(quotient,Math.round(toBin%2));
+            binaryResult.push(quotient,toBin%2);
             return binaryResult;
         }
     }
